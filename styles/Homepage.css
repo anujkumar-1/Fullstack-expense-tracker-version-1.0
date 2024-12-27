@@ -29,6 +29,10 @@
    .container .fa-trash:hover{
     cursor: pointer;
    }
+
+   .fa-trash:before{
+      margin-right:6px;
+   }
    table{
     
     width:100%;
@@ -84,6 +88,7 @@
     display: inline-flex; /* Aligns icon and text if used together */
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
+    padding-right: 6px;
     
   }
 
@@ -150,14 +155,14 @@
 
   #selectPageLength{
     position: absolute;
-    top: 29.5%;
+    margin-top: 10px;
     right: 3.5%;
     font-size: 1.1rem;
   }
 
   #getUserExpensePreference {
     position: absolute;
-    top: 29.5%;
+    margin-top: 10px;
     left: 3.5%;
     font-size: 1.1rem;
   }
@@ -235,4 +240,140 @@
 #s3Button:hover {
   background-color: #ff8c00; /* Slightly darker orange */
   transform: scale(1.05); 
+}
+
+
+/* Media query for devices with a max width of 768px (tablets and smaller screens) */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 0 1rem;
+  }
+
+  .container {
+    margin: 1rem auto;
+    padding: 1rem;
+    box-shadow: none; /* Reduce box-shadow for simplicity on smaller screens */
+  }
+
+  .container h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  #expensePage {
+    flex-direction: column; /* Stack inputs vertically */
+    align-items: stretch; /* Make inputs take full width */
+  }
+
+  #expensePage input,
+  #expensePage #cateogory,
+  #expensePage button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  table {
+    font-size: 0.9rem; /* Reduce table font size */
+  }
+
+  table thead tr th,
+  table tbody tr td {
+    padding: 0.5rem;
+  }
+
+  #selectPageLength,
+  #getUserExpensePreference {
+    position: static; /* Remove absolute positioning */
+    margin: 1rem 0;
+    text-align: center; /* Center align elements */
+    
+  }
+
+  #goback a {
+    font-size: 1rem;
+    top: auto;
+    left: auto;
+    position: relative;
+  }
+
+  #s3Button {
+    left: auto;
+    margin: 1rem auto;
+    display: block;
+    text-align: center;
+  }
+
+  .premiumContainer {
+    position: static; /* Remove absolute positioning */
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  #rzp-button1,
+  #premiumLeaderBoard {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  #pagination {
+    
+    flex-direction: row;
+    margin: 1rem 0;
+  }
+
+  #pagination .buttonPagination {
+    
+    margin: 0.5px;
+  }
+
+  #showLeaderboard,
+  #tableshowLeaderboard {
+    margin: 1rem 0;
+    overflow-x: auto; /* Enable horizontal scrolling for tables if needed */
+  }
+
+  .fa-trash {
+    font-size: 14px; /* Adjust icon size */
+    padding-right: 5px;
+    gap: 6px;
+  }
+}
+
+/* Media query for devices with a max width of 480px (phones) */
+@media (max-width: 480px) {
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  #expensePage input,
+  #expensePage #cateogory,
+  #expensePage button {
+    font-size: 1rem;
+  }
+
+  table thead tr th,
+  table tbody tr td {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+  }
+
+  #rzp-button1,
+  #premiumLeaderBoard {
+    font-size: 0.9rem;
+  }
+
+  #selectPageLength label,
+  #getUserExpensePreference label {
+    font-size: 0.9rem;
+  }
+
+  #s3Button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  #pagination .buttonPagination {
+    font-size: 0.9rem;
+  }
 }
