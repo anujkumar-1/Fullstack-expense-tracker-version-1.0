@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize( "expdb", "hide", "the password", {
+const sequelize = new Sequelize( "expdb", "root", "Anujkumar@1", {
     host: "localhost",
     dialect: "mysql"
 
