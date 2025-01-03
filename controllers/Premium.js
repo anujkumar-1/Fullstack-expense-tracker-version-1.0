@@ -60,7 +60,7 @@ export const updatePremiumReqSuccess = async function (req, res) {
             ispremiumuser: promise3.ispremiumuser,
             totalCost: promise3.totalCost
           },
-          process.env.JWT_TOKEN_SECRET
+          "AK47"
         ),
       });
   } catch (error) {
