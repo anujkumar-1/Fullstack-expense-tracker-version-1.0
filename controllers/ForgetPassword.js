@@ -5,12 +5,12 @@ import { v4 as uuidv4 } from 'uuid';
 import bcrypt from "bcrypt";
  
 const transporter = nodemailer.createTransport({
-  host: process.env.NODEMAILER_HOST,
+  host: "smtp.gmail.com",
   port: 465,
   secure: true, // Use `true` for port 465, `false` for all other ports
   auth: {
-    user: process.env.NODEMAILER_USER_EMAIL,
-    pass: process.env.NODEMAILER_GMAIL_PASSKEY,
+    user: "jesuoor@gmail.com",
+    pass: "owxwvlcayisnlmyn",
   },
 });
 
