@@ -16,7 +16,7 @@ async function expenseForm(event) {
 
       const authTokenJwt = localStorage.getItem("token");
       const z = Math.random()*10
-      const z1 = parseFloat(z.toFixed(2))
+      const z1 = parseFloat(z.toFixed(4))
       const incomeRes = await axios.post(
         "http://localhost:3000/registerIncome",
         dataObj,
@@ -52,7 +52,7 @@ async function expenseForm(event) {
 
       const UTCDate = new Date()
       const x = Math.random()*100
-      const y = parseFloat(x.toFixed(2))
+      const y = parseFloat(x.toFixed(4))
       localDate = UTCDate.toDateString()
 
       const ele = document.createElement("tr")
@@ -306,25 +306,29 @@ async function expenseForm(event) {
   }
 
   async function deleteExpenses(id, category, amount, description){
+    
     const token = localStorage.getItem("token")
+    const parsedObj = parseJwt(token)
+    const currentUser = parsedObj.userId
     const deleteEle = document.getElementById(id)
     console.log(deleteEle.parentElement.parentElement)
     deleteEle.parentElement.parentElement.remove()
     console.log(id, category, amount, description)
 
-    /*
+    
     const deleteExpense = await axios.delete(`http://localhost:3000/deleteExpense`, 
       { headers: { Authorization: token },
         params:{
           id: id,
           category: category,
           amount: amount,
-          description: description
+          description: description,
+          currentUser: currentUser
         }
       }
     )
     console.log(deleteExpense)
-     */
+     
 
 
   }
@@ -408,4 +412,3 @@ function downloadDataFromS3(){
   })
 
 }
-
