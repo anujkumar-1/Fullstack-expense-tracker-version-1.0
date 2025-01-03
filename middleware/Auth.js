@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken"
 const auth = async (req, res, next)=>{
     try {
         const token = req.header("Authorization")
-        const user= jwt.verify(token, process.env.JWT_TOKEN_SECRET) 
+        const user= jwt.verify(token, "AK47") 
         const totalCost = await User.findByPk(user.userId)
         req.totalCost = totalCost
         req.user = user
