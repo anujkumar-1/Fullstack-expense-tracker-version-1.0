@@ -8,8 +8,8 @@ import { Op } from "sequelize";
 export const buyPremiumGetReq = async (req, res) => {
   try {
     var rzp = new Razorpay({
-      key_id: process.env.RAZORPAY_KEY_ID,
-      key_secret: process.env.RAZORPAY_KEY_SECRET,
+      key_id: "rzp_test_SvJJu8AULdC51n",
+      key_secret: "xoVWWSF3EmNyT4oK6YZKLEno",
     });
 
     const amount = 5000;
