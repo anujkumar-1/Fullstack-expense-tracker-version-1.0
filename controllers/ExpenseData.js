@@ -7,9 +7,9 @@ import { Op } from "sequelize";
 import { v4 as uuidv4 } from "uuid";
 
 export const uploadToS3 = async (data, filename) => {
-  const IAM_USER_KEY = "";
-  const IAM_USER_SECRET = "";
-  const BUCKET_NAME = "";
+  const IAM_USER_KEY = "AKIAZ3MGM5EXYDYWZIWW";
+  const IAM_USER_SECRET = "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";
+  const BUCKET_NAME = "myexpensetrackingapp05";
 
   const client = new S3Client({
     region: "us-east-1",
