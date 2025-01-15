@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export function generateAccessTokens(id, name, ispremiumuser, totalCost){
-    const token = jwt.sign({userId: id, name:name, ispremiumuser, totalCost}, "AK47")
+    const token = jwt.sign({userId: id, name:name, ispremiumuser, totalCost}, process.env.JWT_TOKEN_SECRET)
     return token
 }
 
