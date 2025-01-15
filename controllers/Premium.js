@@ -8,11 +8,11 @@ import { Op } from "sequelize";
 export const buyPremiumGetReq = async (req, res) => {
   try {
     var rzp = new Razorpay({
-      key_id: "rzp_test_SvJJu8AULdC51n",
-      key_secret: "xoVWWSF3EmNyT4oK6YZKLEno",
+      key_id: process.env.RAZORPAY_KEY_ID,
+      key_secret: process.env.RAZORPAY_KEY_SECRET,
     });
 
-    const amount = 5000;
+    const amount = 100;
     rzp.orders.create({ amount, currency: "INR" }, async (err, order) => {
       try {
         if (err) {
@@ -60,7 +60,7 @@ export const updatePremiumReqSuccess = async function (req, res) {
             ispremiumuser: promise3.ispremiumuser,
             totalCost: promise3.totalCost
           },
-          "AK47"
+          process.env.JWT_TOKEN_SECRET
         ),
       });
   } catch (error) {
