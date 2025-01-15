@@ -76,10 +76,9 @@ export const updatePremiumReqFailed = async function (req, res) {
       paymentstatus: payment_id,
       status: "Failed"
     });
-    t.commit()
+  
     res.status(200).json({ sucess: false, message: "Transaction Failed" });
   } catch (error) {
-    t.rollback()
     throw new Error(error);
   }
 };
