@@ -1,8 +1,6 @@
 import User from "../models/User.js";
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
-import dotenv from "dotenv";
-dotenv.config();
 
 export function generateAccessTokens(id, name, ispremiumuser, totalCost){
     const token = jwt.sign({userId: id, name:name, ispremiumuser, totalCost}, process.env.JWT_TOKEN_SECRET)
