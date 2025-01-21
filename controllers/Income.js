@@ -6,9 +6,7 @@ import User from "../models/User.js"
     try {
         // const t = await sequelize.transaction()
         console.log("req income", req.user);
-        const amount = req.body.amount
-        const description = req.body.description
-        const category = req.body.category
+        const {amount, description, category} = req.body
         const token = req.header("Authorization")
         console.log("IncomePostReq :",token);
         const postData = await Income.create({amount:amount, description:description, category: category, userInfoId: req.user.userId})
