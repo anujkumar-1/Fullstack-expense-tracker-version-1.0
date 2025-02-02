@@ -11,6 +11,8 @@ dotenv.config()
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+app.use(express.static(path.join(__dirname, 'views')));
+
 const accessLogStream = fs.createWriteStream(path.join(__dirname, "access.log"), {flags: "a"})
 
 app.use(helmet())
@@ -43,6 +45,11 @@ app.use(premiumroute)
 app.use(incomeroute)
 app.use(awsroute)
 app.use(deleteRoute)
+
+
+app.use('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'Signup.html'));
+});
 
 sequelize.sync().then(result=>{
     app.listen(process.env.PORT, ()=>{
